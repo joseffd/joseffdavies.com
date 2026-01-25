@@ -1,0 +1,21 @@
+:root {
+  /* Colors - Pastel Yellow Theme */
+  --color-bg: #fffbeb;
+  --color-bg-accent: #fef3c7;
+  --color-text: #451a03;
+  --color-text-muted: #78716c;
+  --color-accent: #fbbf24;
+  --color-accent-soft: #fde68a;
+
+  /* Typography */
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+}
