@@ -5,7 +5,23 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<main>
 		<h1>Experience</h1>
-		
+
+		<section class="freelance">
+			<h2 class="section-title">Freelance</h2>
+			<p class="freelance-intro">Available for small projects, advisory work, and hiring support. <a href="mailto:joseffgdavies@outlook.com">Get in touch</a>.</p>
+			<article class="role">
+				<header>
+					<div class="role-header">
+						<h3>Tech Lead</h3>
+						<a class="company" href="https://www.myanova.com/" target="_blank" rel="noopener noreferrer">MyAnova</a>
+					</div>
+					<p class="meta">Dec 2025 – Feb 2026</p>
+				</header>
+				<p class="summary">Ran the hiring process for their first engineer, conducting interviews and providing feedback.</p>
+			</article>
+		</section>
+
+		<h2 class="section-title">Employment</h2>
 		<div class="timeline">
 			<article class="role">
 				<header>
@@ -123,5 +139,44 @@ import Layout from '../layouts/Layout.astro';
 		margin: 0;
 		line-height: 1.6;
 		color: var(--color-text-muted);
+	}
+
+	.section-title {
+		font-size: 1rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-text-muted);
+		margin: 0 0 var(--space-md);
+	}
+
+	.freelance {
+		margin-bottom: var(--space-lg);
+	}
+
+	.freelance-intro {
+		margin: 0 0 var(--space-md);
+		color: var(--color-text-muted);
+	}
+
+	.freelance-intro a {
+		color: var(--color-accent);
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.freelance-intro a:hover {
+		text-decoration: underline;
+	}
+
+	.freelance h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.company-text {
+		color: var(--color-accent);
+		font-weight: 500;
 	}
 </style>

@@ -1,5 +1,9 @@
 <main>
 	<h1>Hi, I'm Joseff</h1>
+	<p class="location">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+		Hackney, London
+	</p>
 	<p class="intro">
 		I'm a <strong>Senior Frontend Engineer</strong> currently working at 
 		<a href="https://www.thanksben.com/" target="_blank" rel="noopener noreferrer">Ben</a>.
@@ -75,6 +79,20 @@
 		color: var(--color-text-muted);
 		margin: var(--space-sm) 0 0;
 		max-width: 40ch;
+	}
+
+	.location {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.35rem;
+		font-size: 0.9rem;
+		color: var(--color-text-muted);
+		margin: var(--space-xs) 0 0;
+	}
+
+	.location svg {
+		flex-shrink: 0;
 	}
 
 	.links {
