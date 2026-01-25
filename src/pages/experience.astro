@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<main>
+		<h1>Experience</h1>
+		
+		<div class="timeline">
+			<article class="role">
+				<header>
+					<div class="role-header">
+						<h2>Senior Frontend Engineer</h2>
+						<a class="company" href="https://www.thanksben.com/" target="_blank" rel="noopener noreferrer">Ben</a>
+					</div>
+					<p class="meta">Feb 2023 – Present <span class="promotion">Promoted July 2024</span></p>
+				</header>
+				<p class="summary">Led key projects including a Total Reward Statement tool, a new platform layout with left navigation, and a dashboard redesign. Authored a frontend architecture guide adopted across teams and introduced Chromatic for visual regression testing.</p>
+			</article>
+
+			<article class="role">
+				<header>
+					<div class="role-header">
+						<h2>Full Stack Developer</h2>
+						<a class="company" href="https://www.london.gov.uk/" target="_blank" rel="noopener noreferrer">Greater London Authority</a>
+					</div>
+					<p class="meta">Feb 2022 – Feb 2023</p>
+				</header>
+				<p class="summary">Built interactive maps with React, Mapbox, and D3 for London policy teams. Delivered a SaaS tool for the London Assembly.</p>
+			</article>
+
+			<article class="role">
+				<header>
+					<div class="role-header">
+						<h2>Software Engineer</h2>
+						<a class="company" href="https://governorhub.com/" target="_blank" rel="noopener noreferrer">GovernorHub</a>
+					</div>
+					<p class="meta">Feb 2021 – Feb 2022</p>
+				</header>
+				<p class="summary">Full-stack React and GraphQL development.</p>
+			</article>
+
+			<article class="role">
+				<header>
+					<div class="role-header">
+						<h2>Graduate Software Developer</h2>
+						<a class="company" href="https://www.mkodo.com/" target="_blank" rel="noopener noreferrer">mkodo</a>
+					</div>
+					<p class="meta">Aug 2020 – Feb 2021</p>
+				</header>
+				<p class="summary">Foundations in TDD and Clean Code practices.</p>
+			</article>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 48rem;
+		margin: 0 auto;
+		padding: var(--space-xl) var(--space-md) var(--space-lg);
+	}
+
+	h1 {
+		font-size: clamp(2rem, 5vw, 2.5rem);
+		font-weight: 700;
+		margin: 0 0 var(--space-lg);
+		letter-spacing: -0.02em;
+	}
+
+	.timeline {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-lg);
+	}
+
+	.role {
+		border-left: 3px solid var(--color-accent-soft);
+		padding-left: var(--space-md);
+	}
+
+	.role-header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: var(--space-xs);
+	}
+
+	h2 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.company {
+		color: var(--color-accent);
+		font-weight: 500;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.company:hover {
+		color: var(--color-text);
+		text-decoration: underline;
+	}
+
+	.meta {
+		font-size: 0.9rem;
+		color: var(--color-text-muted);
+		margin: var(--space-xs) 0 var(--space-sm);
+	}
+
+	.promotion {
+		background-color: var(--color-accent-soft);
+		color: var(--color-text);
+		padding: 0.15em 0.5em;
+		border-radius: 4px;
+		font-size: 0.85em;
+		margin-left: var(--space-xs);
+	}
+
+	.summary {
+		margin: 0;
+		line-height: 1.6;
+		color: var(--color-text-muted);
+	}
+</style>

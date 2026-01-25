@@ -1,7 +1,12 @@
 <main>
-	<h1>Joseff</h1>
-	<p class="role">Software Engineer</p>
-	<p class="tagline">I build things for the web.</p>
+	<h1>Hi, I'm Joseff</h1>
+	<p class="intro">
+		I'm a <strong>Senior Frontend Engineer</strong> currently working at 
+		<a href="https://www.thanksben.com/" target="_blank" rel="noopener noreferrer">Ben</a>.
+	</p>
+	<p class="tagline">
+		I enjoy building stuff and running.
+	</p>
 	
 	<nav class="links">
 		<a href="https://github.com/joseffd" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -40,11 +45,29 @@
 		letter-spacing: -0.02em;
 	}
 
-	.role {
-		font-size: clamp(1.25rem, 3vw, 1.5rem);
+	.intro {
+		font-size: clamp(1.125rem, 2.5vw, 1.35rem);
+		color: var(--color-text);
+		margin: var(--space-sm) 0 0;
+		max-width: 50ch;
+		line-height: 1.5;
+	}
+
+	.intro strong {
 		color: var(--color-accent);
-		margin: var(--space-xs) 0 0;
-		font-weight: 500;
+		font-weight: 600;
+	}
+
+	.intro a {
+		color: var(--color-accent);
+		text-decoration: none;
+		font-weight: 600;
+		transition: color 0.2s ease;
+	}
+
+	.intro a:hover {
+		color: var(--color-text);
+		text-decoration: underline;
 	}
 
 	.tagline {
