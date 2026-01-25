@@ -1,6 +1,19 @@
 ---
 import '../styles/tokens.css';
 import Nav from '../components/Nav.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Joseff Davies | Senior Frontend Engineer",
+	description = "Senior Frontend Engineer based in Hackney, London. Currently working at Ben. Available for freelance projects, advisory work, and hiring support."
+} = Astro.props;
+
+const siteUrl = "https://joseffdavies.com";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 ---
 
 <!doctype html>
@@ -11,7 +24,23 @@ import Nav from '../components/Nav.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Joseff | Engineer</title>
+		
+		<!-- SEO -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+		
+		<!-- Open Graph / Social -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="Joseff Davies" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 	</head>
 	<body>
 		<Nav />
