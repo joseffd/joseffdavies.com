@@ -6,9 +6,10 @@ interface Props {
 	meta?: string;
 	badge?: string;
 	summary: string;
+	tags?: string[];
 }
 
-const { title, subtitle, subtitleUrl, meta, badge, summary } = Astro.props;
+const { title, subtitle, subtitleUrl, meta, badge, summary, tags } = Astro.props;
 ---
 
 <article class="entry">
@@ -29,6 +30,11 @@ const { title, subtitle, subtitleUrl, meta, badge, summary } = Astro.props;
 		)}
 	</header>
 	<p class="summary">{summary}</p>
+	{tags && tags.length > 0 && (
+		<div class="tags">
+			{tags.map((tag) => <span class="tag">{tag}</span>)}
+		</div>
+	)}
 </article>
 
 <style>
@@ -86,5 +92,20 @@ const { title, subtitle, subtitleUrl, meta, badge, summary } = Astro.props;
 		margin: 0;
 		line-height: 1.6;
 		color: var(--color-text-muted);
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: var(--space-sm);
+	}
+
+	.tag {
+		background-color: var(--color-accent-soft);
+		color: var(--color-text);
+		padding: 0.15em 0.5em;
+		border-radius: 4px;
+		font-size: 0.8rem;
 	}
 </style>
