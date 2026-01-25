@@ -1,0 +1,90 @@
+---
+interface Props {
+	title: string;
+	subtitle: string;
+	subtitleUrl?: string;
+	meta?: string;
+	badge?: string;
+	summary: string;
+}
+
+const { title, subtitle, subtitleUrl, meta, badge, summary } = Astro.props;
+---
+
+<article class="entry">
+	<header>
+		<div class="entry-header">
+			<h3>{title}</h3>
+			{subtitleUrl ? (
+				<a class="subtitle-link" href={subtitleUrl} target="_blank" rel="noopener noreferrer">{subtitle}</a>
+			) : (
+				<span class="subtitle-text">{subtitle}</span>
+			)}
+		</div>
+		{meta && (
+			<p class="meta">
+				{meta}
+				{badge && <span class="badge">{badge}</span>}
+			</p>
+		)}
+	</header>
+	<p class="summary">{summary}</p>
+</article>
+
+<style>
+	.entry {
+		border-left: 3px solid var(--color-accent-soft);
+		padding-left: var(--space-md);
+	}
+
+	.entry-header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: var(--space-xs);
+	}
+
+	h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.subtitle-link {
+		color: var(--color-accent);
+		font-weight: 500;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.subtitle-link:hover {
+		color: var(--color-text);
+		text-decoration: underline;
+	}
+
+	.subtitle-text {
+		color: var(--color-accent);
+		font-weight: 500;
+	}
+
+	.meta {
+		font-size: 0.9rem;
+		color: var(--color-text-muted);
+		margin: var(--space-xs) 0 var(--space-sm);
+	}
+
+	.badge {
+		background-color: var(--color-accent-soft);
+		color: var(--color-text);
+		padding: 0.15em 0.5em;
+		border-radius: 4px;
+		font-size: 0.85em;
+		margin-left: var(--space-xs);
+	}
+
+	.summary {
+		margin: 0;
+		line-height: 1.6;
+		color: var(--color-text-muted);
+	}
+</style>

@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import EntryCard from '../components/EntryCard.astro';
+---
+
+<Layout>
+	<main>
+		<h1>Work</h1>
+
+		<h2 class="section-title">Projects</h2>
+		<p class="section-intro">Built at the Greater London Authority.</p>
+		<div class="grid">
+			<EntryCard
+				title="London Water Fountains Map"
+				subtitle="View map"
+				subtitleUrl="https://apps.london.gov.uk/water-fountains"
+				summary="Interactive map showing public water fountain locations across London."
+			/>
+
+			<EntryCard
+				title="Sustainable Drainage Systems Map"
+				subtitle="View map"
+				subtitleUrl="https://apps.london.gov.uk/suds"
+				summary="Interactive map for London's sustainable drainage infrastructure."
+			/>
+		</div>
+
+		<h2 class="section-title">Open Source</h2>
+		<div class="grid">
+			<EntryCard
+				title="Contribution to react-jsonschema-form"
+				subtitle="View PR"
+				subtitleUrl="https://github.com/rjsf-team/react-jsonschema-form/pull/4915"
+				summary="Added fieldPathId to FieldTemplateProps to fix onChange path handling."
+			/>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 48rem;
+		margin: 0 auto;
+		padding: var(--space-xl) var(--space-md) var(--space-lg);
+	}
+
+	h1 {
+		font-size: clamp(2rem, 5vw, 2.5rem);
+		font-weight: 700;
+		margin: 0 0 var(--space-lg);
+		letter-spacing: -0.02em;
+	}
+
+	.section-title {
+		font-size: 1rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-text-muted);
+		margin: 0 0 var(--space-md);
+	}
+
+	.section-title:not(:first-of-type) {
+		margin-top: var(--space-lg);
+	}
+
+	.section-intro {
+		margin: 0 0 var(--space-md);
+		color: var(--color-text-muted);
+	}
+
+	.grid {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-lg);
+	}
+</style>

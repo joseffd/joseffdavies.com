@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import EntryCard from '../components/EntryCard.astro';
 ---
 
 <Layout>
@@ -9,63 +10,49 @@ import Layout from '../layouts/Layout.astro';
 		<section class="freelance">
 			<h2 class="section-title">Freelance</h2>
 			<p class="freelance-intro">Available for small projects, advisory work, and hiring support. <a href="mailto:joseffgdavies@outlook.com">Get in touch</a>.</p>
-			<article class="role">
-				<header>
-					<div class="role-header">
-						<h3>Tech Lead</h3>
-						<a class="company" href="https://www.myanova.com/" target="_blank" rel="noopener noreferrer">MyAnova</a>
-					</div>
-					<p class="meta">Dec 2025 – Feb 2026</p>
-				</header>
-				<p class="summary">Ran the hiring process for their first engineer, conducting interviews and providing feedback.</p>
-			</article>
+			<EntryCard
+				title="Tech Lead"
+				subtitle="MyAnova"
+				subtitleUrl="https://www.myanova.com/"
+				meta="Dec 2025 – Feb 2026"
+				summary="Ran the hiring process for their first engineer, conducting interviews and providing feedback."
+			/>
 		</section>
 
 		<h2 class="section-title">Employment</h2>
 		<div class="timeline">
-			<article class="role">
-				<header>
-					<div class="role-header">
-						<h2>Senior Frontend Engineer</h2>
-						<a class="company" href="https://www.thanksben.com/" target="_blank" rel="noopener noreferrer">Ben</a>
-					</div>
-					<p class="meta">Feb 2023 – Present <span class="promotion">Promoted July 2024</span></p>
-				</header>
-				<p class="summary">Led key projects including a Total Reward Statement tool, a new platform layout with left navigation, and a dashboard redesign. Authored a frontend architecture guide adopted across teams and introduced Chromatic for visual regression testing.</p>
-			</article>
+			<EntryCard
+				title="Senior Frontend Engineer"
+				subtitle="Ben"
+				subtitleUrl="https://www.thanksben.com/"
+				meta="Feb 2023 – Present"
+				badge="Promoted July 2024"
+				summary="Led key projects including a Total Reward Statement tool, a new platform layout with left navigation, and a dashboard redesign. Authored a frontend architecture guide adopted across teams and introduced Chromatic for visual regression testing."
+			/>
 
-			<article class="role">
-				<header>
-					<div class="role-header">
-						<h2>Full Stack Developer</h2>
-						<a class="company" href="https://www.london.gov.uk/" target="_blank" rel="noopener noreferrer">Greater London Authority</a>
-					</div>
-					<p class="meta">Feb 2022 – Feb 2023</p>
-				</header>
-				<p class="summary">Built interactive maps with React, Mapbox, and D3 for London policy teams. Delivered a SaaS tool for the London Assembly.</p>
-			</article>
+			<EntryCard
+				title="Full Stack Developer"
+				subtitle="Greater London Authority"
+				subtitleUrl="https://www.london.gov.uk/"
+				meta="Feb 2022 – Feb 2023"
+				summary="Built interactive maps with React, Mapbox, and D3 for London policy teams. Delivered a SaaS tool for the London Assembly."
+			/>
 
-			<article class="role">
-				<header>
-					<div class="role-header">
-						<h2>Software Engineer</h2>
-						<a class="company" href="https://governorhub.com/" target="_blank" rel="noopener noreferrer">GovernorHub</a>
-					</div>
-					<p class="meta">Feb 2021 – Feb 2022</p>
-				</header>
-				<p class="summary">Full-stack React and GraphQL development.</p>
-			</article>
+			<EntryCard
+				title="Software Engineer"
+				subtitle="GovernorHub"
+				subtitleUrl="https://governorhub.com/"
+				meta="Feb 2021 – Feb 2022"
+				summary="Full-stack React and GraphQL development."
+			/>
 
-			<article class="role">
-				<header>
-					<div class="role-header">
-						<h2>Graduate Software Developer</h2>
-						<a class="company" href="https://www.mkodo.com/" target="_blank" rel="noopener noreferrer">mkodo</a>
-					</div>
-					<p class="meta">Aug 2020 – Feb 2021</p>
-				</header>
-				<p class="summary">Foundations in TDD and Clean Code practices.</p>
-			</article>
+			<EntryCard
+				title="Graduate Software Developer"
+				subtitle="mkodo"
+				subtitleUrl="https://www.mkodo.com/"
+				meta="Aug 2020 – Feb 2021"
+				summary="Foundations in TDD and Clean Code practices."
+			/>
 		</div>
 	</main>
 </Layout>
@@ -88,57 +75,6 @@ import Layout from '../layouts/Layout.astro';
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-lg);
-	}
-
-	.role {
-		border-left: 3px solid var(--color-accent-soft);
-		padding-left: var(--space-md);
-	}
-
-	.role-header {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: var(--space-xs);
-	}
-
-	h2 {
-		font-size: 1.25rem;
-		font-weight: 600;
-		margin: 0;
-	}
-
-	.company {
-		color: var(--color-accent);
-		font-weight: 500;
-		text-decoration: none;
-		transition: color 0.2s ease;
-	}
-
-	.company:hover {
-		color: var(--color-text);
-		text-decoration: underline;
-	}
-
-	.meta {
-		font-size: 0.9rem;
-		color: var(--color-text-muted);
-		margin: var(--space-xs) 0 var(--space-sm);
-	}
-
-	.promotion {
-		background-color: var(--color-accent-soft);
-		color: var(--color-text);
-		padding: 0.15em 0.5em;
-		border-radius: 4px;
-		font-size: 0.85em;
-		margin-left: var(--space-xs);
-	}
-
-	.summary {
-		margin: 0;
-		line-height: 1.6;
-		color: var(--color-text-muted);
 	}
 
 	.section-title {
@@ -167,16 +103,5 @@ import Layout from '../layouts/Layout.astro';
 
 	.freelance-intro a:hover {
 		text-decoration: underline;
-	}
-
-	.freelance h3 {
-		font-size: 1.25rem;
-		font-weight: 600;
-		margin: 0;
-	}
-
-	.company-text {
-		color: var(--color-accent);
-		font-weight: 500;
 	}
 </style>
