@@ -61,6 +61,25 @@ import AnimatedLogo from './AnimatedLogo.astro';
 		transition: color 0.2s ease;
 	}
 
+	@media (max-width: 600px) {
+		nav {
+			padding: var(--space-xs) var(--space-sm);
+		}
+
+		.logo :global(.animated-logo) {
+			width: 36px;
+			height: 36px;
+		}
+
+		ul {
+			gap: var(--space-sm);
+		}
+
+		ul a {
+			font-size: 0.8rem;
+		}
+	}
+
 	ul a:hover,
 	ul a.active {
 		color: var(--color-text);
