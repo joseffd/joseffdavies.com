@@ -1,45 +1,36 @@
 ---
 import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import ServiceCard from '../components/ServiceCard.astro';
+import ServiceCard from './ServiceCard.astro';
 import myannovaLogo from '../assets/myannova.png';
 ---
 
-<Layout 
-	title="Freelance | Joseff Davies"
-	description="Available for freelance projects, advisory work, and hiring support. Senior Frontend Engineer based in London."
->
-	<main>
-		<h1>Freelance</h1>
+<section id="freelance" class="page-section">
+	<div class="container">
+		<h2 class="page-title">Freelance</h2>
+		<p class="page-intro">Available for freelance work alongside my full-time role. <a href="mailto:joseff@joseffdavies.com">Get in touch</a>.</p>
 
-		<p class="intro">Available for freelance work alongside my full-time role. <a href="mailto:joseff@joseffdavies.com">Get in touch</a>.</p>
+		<div class="services-grid">
+			<ServiceCard
+				title="Technical Interviews & Hiring"
+				description="I'll run your frontend technical interviews, assess candidates, and provide detailed feedback to help you make confident hiring decisions."
+			>
+				<svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+			</ServiceCard>
+			<ServiceCard
+				title="Code Reviews & Architecture"
+				description="Get an outside perspective on your frontend codebase. I'll review your code, identify improvements, and advise on architecture decisions."
+			>
+				<svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+			</ServiceCard>
+			<ServiceCard
+				title="Short-term Projects"
+				description="Focused frontend work on a part-time basis - a specific feature, a tricky refactor, or helping get a project over the line."
+			>
+				<svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+			</ServiceCard>
+		</div>
 
-		<section class="services">
-			<h2 class="section-title">Services</h2>
-			<div class="services-grid">
-				<ServiceCard
-					title="Technical Interviews & Hiring"
-					description="I'll run your frontend technical interviews, assess candidates, and provide detailed feedback to help you make confident hiring decisions."
-				>
-					<svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-				</ServiceCard>
-				<ServiceCard
-					title="Code Reviews & Architecture"
-					description="Get an outside perspective on your frontend codebase. I'll review your code, identify improvements, and advise on architecture decisions."
-				>
-					<svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-				</ServiceCard>
-				<ServiceCard
-					title="Short-term Projects"
-					description="Focused frontend work on a part-time basis - a specific feature, a tricky refactor, or helping get a project over the line."
-				>
-					<svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-				</ServiceCard>
-			</div>
-		</section>
-
-		<section class="testimonials">
-			<h2 class="section-title">Testimonials</h2>
+		<div class="testimonial-wrapper">
 			<blockquote class="testimonial">
 				<svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
 					<path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006c.157.617.597 1.143 1.187 1.435.587.292 1.282.303 1.879.03.596-.272 1.054-.793 1.237-1.41.184-.616.084-1.282-.27-1.801-.355-.519-.93-.866-1.553-.94zm8 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006c.157.617.597 1.143 1.187 1.435.587.292 1.282.303 1.879.03.596-.272 1.054-.793 1.237-1.41.184-.616.084-1.282-.27-1.801-.355-.519-.93-.866-1.553-.94z"/>
@@ -53,60 +44,52 @@ import myannovaLogo from '../assets/myannova.png';
 					</div>
 				</footer>
 			</blockquote>
-		</section>
-	</main>
-</Layout>
+		</div>
+	</div>
+</section>
 
 <style>
-	main {
-		max-width: 48rem;
-		margin: 0 auto;
-		padding: var(--space-xl) var(--space-md) var(--space-lg);
+	.page-section {
+		padding: var(--space-lg) var(--space-md);
+		scroll-margin-top: 60px;
 	}
 
-	h1 {
+	.container {
+		max-width: 48rem;
+		margin: 0 auto;
+	}
+
+	.page-title {
 		font-size: clamp(2rem, 5vw, 2.5rem);
 		font-weight: 700;
 		margin: 0 0 var(--space-lg);
 		letter-spacing: -0.02em;
 	}
 
-	.intro {
-		margin: 0 0 var(--space-lg);
+	.page-intro {
+		margin: calc(-1 * var(--space-md)) 0 var(--space-lg);
 		color: var(--color-text-muted);
 	}
 
-	.intro a {
+	.page-intro a {
 		color: var(--color-accent);
 		text-decoration: none;
 		font-weight: 500;
 	}
 
-	.intro a:hover {
+	.page-intro a:hover {
 		text-decoration: underline;
-	}
-
-	.section-title {
-		font-size: 1rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: var(--color-text-muted);
-		margin: 0 0 var(--space-md);
-	}
-
-	.services {
-		margin-bottom: var(--space-lg);
 	}
 
 	.services-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 		gap: var(--space-md);
+		margin-bottom: var(--space-lg);
 	}
 
-	.testimonials {
-		margin-bottom: var(--space-lg);
+	.testimonial-wrapper {
+		margin-top: var(--space-md);
 	}
 
 	.testimonial {

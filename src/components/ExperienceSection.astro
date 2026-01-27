@@ -1,16 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import EntryCard from '../components/EntryCard.astro';
+import EntryCard from './EntryCard.astro';
 ---
 
-<Layout 
-	title="Experience | Joseff Davies"
-	description="Senior Frontend Engineer with experience at Ben, Greater London Authority, GovernorHub, and mkodo. Based in London."
->
-	<main>
-		<h1>Experience</h1>
+<section id="experience" class="page-section">
+	<div class="container">
+		<h2 class="page-title">Experience</h2>
 
-		<h2 class="section-title">Freelance</h2>
+		<h3 class="section-title">Freelance</h3>
 		<div class="timeline">
 			<EntryCard
 				title="Tech Lead"
@@ -21,7 +17,7 @@ import EntryCard from '../components/EntryCard.astro';
 			/>
 		</div>
 
-		<h2 class="section-title">Employment</h2>
+		<h3 class="section-title">Employment</h3>
 		<div class="timeline">
 			<EntryCard
 				title="Senior Frontend Engineer"
@@ -31,7 +27,6 @@ import EntryCard from '../components/EntryCard.astro';
 				badge="Promoted July 2024"
 				summary="Led key projects including a Total Reward Statement tool, a new platform layout with left navigation, and a dashboard redesign. Authored a frontend architecture guide adopted across teams and introduced Chromatic for visual regression testing."
 			/>
-
 			<EntryCard
 				title="Full Stack Developer"
 				subtitle="Greater London Authority"
@@ -39,7 +34,6 @@ import EntryCard from '../components/EntryCard.astro';
 				meta="Feb 2022 – Feb 2023"
 				summary="Built interactive maps with React, Mapbox, and D3 for London policy teams. Delivered a SaaS tool for the London Assembly."
 			/>
-
 			<EntryCard
 				title="Software Engineer"
 				subtitle="GovernorHub"
@@ -47,7 +41,6 @@ import EntryCard from '../components/EntryCard.astro';
 				meta="Feb 2021 – Feb 2022"
 				summary="Full-stack React and GraphQL development."
 			/>
-
 			<EntryCard
 				title="Graduate Software Developer"
 				subtitle="mkodo"
@@ -56,27 +49,25 @@ import EntryCard from '../components/EntryCard.astro';
 				summary="Foundations in TDD and Clean Code practices."
 			/>
 		</div>
-	</main>
-</Layout>
+	</div>
+</section>
 
 <style>
-	main {
-		max-width: 48rem;
-		margin: 0 auto;
-		padding: var(--space-xl) var(--space-md) var(--space-lg);
+	.page-section {
+		padding: var(--space-lg) var(--space-md);
+		scroll-margin-top: 60px;
 	}
 
-	h1 {
+	.container {
+		max-width: 48rem;
+		margin: 0 auto;
+	}
+
+	.page-title {
 		font-size: clamp(2rem, 5vw, 2.5rem);
 		font-weight: 700;
 		margin: 0 0 var(--space-lg);
 		letter-spacing: -0.02em;
-	}
-
-	.timeline {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-lg);
 	}
 
 	.section-title {
@@ -90,5 +81,11 @@ import EntryCard from '../components/EntryCard.astro';
 
 	.section-title:not(:first-of-type) {
 		margin-top: var(--space-lg);
+	}
+
+	.timeline {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-lg);
 	}
 </style>

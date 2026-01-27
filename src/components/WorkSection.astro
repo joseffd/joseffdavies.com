@@ -1,18 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import EntryCard from '../components/EntryCard.astro';
+import EntryCard from './EntryCard.astro';
 ---
 
-<Layout 
-	title="Work | Joseff Davies"
-	description="Portfolio of frontend projects including interactive maps for the Greater London Authority and open source contributions."
->
-	<main>
-		<h1>Work</h1>
+<section id="work" class="page-section">
+	<div class="container">
+		<h2 class="page-title">Work</h2>
 
-		<h2 class="section-title">Projects</h2>
+		<h3 class="section-title">Projects</h3>
 		<p class="section-intro">Built at the Greater London Authority.</p>
-		<div class="grid">
+		<div class="timeline">
 			<EntryCard
 				title="London Water Fountains Map"
 				subtitle="View map"
@@ -20,7 +16,6 @@ import EntryCard from '../components/EntryCard.astro';
 				summary="Interactive map showing public water fountain locations across London."
 				tags={["React", "Mapbox", "react-map-gl"]}
 			/>
-
 			<EntryCard
 				title="Sustainable Drainage Systems Map"
 				subtitle="View map"
@@ -28,7 +23,6 @@ import EntryCard from '../components/EntryCard.astro';
 				summary="Interactive map for London's sustainable drainage infrastructure."
 				tags={["React", "Mapbox", "react-map-gl"]}
 			/>
-
 			<EntryCard
 				title="Green Infrastructure Explorer"
 				subtitle="View map"
@@ -38,8 +32,8 @@ import EntryCard from '../components/EntryCard.astro';
 			/>
 		</div>
 
-		<h2 class="section-title">Open Source</h2>
-		<div class="grid">
+		<h3 class="section-title">Open Source</h3>
+		<div class="timeline">
 			<EntryCard
 				title="joseffdavies.com"
 				subtitle="View source"
@@ -47,7 +41,6 @@ import EntryCard from '../components/EntryCard.astro';
 				summary="This website. Built with Astro."
 				tags={["Astro", "TypeScript"]}
 			/>
-
 			<EntryCard
 				title="Contribution to react-jsonschema-form"
 				subtitle="View PR"
@@ -55,17 +48,21 @@ import EntryCard from '../components/EntryCard.astro';
 				summary="Added fieldPathId to FieldTemplateProps to fix onChange path handling."
 			/>
 		</div>
-	</main>
-</Layout>
+	</div>
+</section>
 
 <style>
-	main {
-		max-width: 48rem;
-		margin: 0 auto;
-		padding: var(--space-xl) var(--space-md) var(--space-lg);
+	.page-section {
+		padding: var(--space-lg) var(--space-md);
+		scroll-margin-top: 60px;
 	}
 
-	h1 {
+	.container {
+		max-width: 48rem;
+		margin: 0 auto;
+	}
+
+	.page-title {
 		font-size: clamp(2rem, 5vw, 2.5rem);
 		font-weight: 700;
 		margin: 0 0 var(--space-lg);
@@ -86,11 +83,11 @@ import EntryCard from '../components/EntryCard.astro';
 	}
 
 	.section-intro {
-		margin: 0 0 var(--space-md);
+		margin: calc(-0.5 * var(--space-md)) 0 var(--space-md);
 		color: var(--color-text-muted);
 	}
 
-	.grid {
+	.timeline {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-lg);

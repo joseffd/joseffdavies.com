@@ -1,8 +1,42 @@
 ---
-import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
+import AboutSection from '../components/AboutSection.astro';
+import FreelanceSection from '../components/FreelanceSection.astro';
+import ExperienceSection from '../components/ExperienceSection.astro';
+import WorkSection from '../components/WorkSection.astro';
 ---
 
 <Layout>
-	<Hero />
+	<AboutSection />
+	<FreelanceSection />
+	<ExperienceSection />
+	<WorkSection />
 </Layout>
+
+<script>
+	const sections = document.querySelectorAll('[id]');
+	
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					const id = entry.target.id;
+					const newHash = id === 'about' ? '/' : `#${id}`;
+					if (window.location.hash !== `#${id}` && !(id === 'about' && window.location.hash === '')) {
+						history.replaceState(null, '', newHash);
+					}
+				}
+			});
+		},
+		{
+			rootMargin: '-50% 0px -50% 0px',
+			threshold: 0
+		}
+	);
+
+	sections.forEach((section) => {
+		if (['about', 'freelance', 'experience', 'work'].includes(section.id)) {
+			observer.observe(section);
+		}
+	});
+</script>
