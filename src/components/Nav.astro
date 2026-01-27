@@ -1,11 +1,11 @@
 ---
-import logo from '../assets/logo.svg';
+import AnimatedLogo from './AnimatedLogo.astro';
 ---
 
 <header>
 	<nav>
-		<a href="/" class="logo">
-			<img src={logo.src} alt="Joseff Davies" width="60" height="60" />
+		<a href="/" class="logo" aria-label="Joseff Davies">
+			<AnimatedLogo width={60} height={60} />
 		</a>
 		<ul>
 			<li><a href="/">About</a></li>
@@ -40,12 +40,7 @@ import logo from '../assets/logo.svg';
 		text-decoration: none;
 	}
 
-	.logo img {
-		display: block;
-		transition: transform 0.2s ease;
-	}
-
-	.logo:hover img {
+	.logo:hover :global(.animated-logo) {
 		transform: scale(1.05);
 	}
 
