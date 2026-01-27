@@ -14,6 +14,52 @@ const {
 
 const siteUrl = "https://joseffdavies.com";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+// Structured data for SEO
+const structuredData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": `${siteUrl}/#website`,
+			"url": siteUrl,
+			"name": "Joseff Davies",
+			"description": "Senior Frontend Engineer based in London",
+			"publisher": {
+				"@id": `${siteUrl}/#person`
+			}
+		},
+		{
+			"@type": "Person",
+			"@id": `${siteUrl}/#person`,
+			"name": "Joseff Davies",
+			"url": siteUrl,
+			"jobTitle": "Senior Frontend Engineer",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Ben",
+				"url": "https://www.thanksben.com/"
+			},
+			"sameAs": [
+				"https://github.com/joseffd",
+				"https://www.linkedin.com/in/joseff-davies-978293197/"
+			],
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "London",
+				"addressCountry": "UK"
+			},
+			"knowsAbout": [
+				"Frontend Development",
+				"React",
+				"TypeScript",
+				"JavaScript",
+				"GraphQL",
+				"Astro"
+			]
+		}
+	]
+};
 ---
 
 <!doctype html>
@@ -45,6 +91,9 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 	</head>
 	<body>
 		<Nav />
