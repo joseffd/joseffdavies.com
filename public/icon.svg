@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5"
+        flood-color="#4A2F1B" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="128" height="128" rx="24" fill="#FFF4B8" />
+
+  <!-- < and > brackets -->
+  <path d="M34 32 L18 64 L34 96"
+        fill="none" stroke="#4A2F1B" stroke-width="8"
+        stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M94 32 L110 64 L94 96"
+        fill="none" stroke="#4A2F1B" stroke-width="8"
+        stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- JD monogram (optically centred) -->
+  <g id="monogram" transform="translate(64 66)">
+    <!-- J -->
+    <text x="-1" y="0"
+          text-anchor="end"
+          dominant-baseline="middle"
+          font-size="56" font-weight="700"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+          fill="#FFE58A"
+          stroke="#4A2F1B"
+          stroke-width="4"
+          paint-order="stroke"
+          filter="url(#softShadow)">
+      J
+    </text>
+
+    <!-- D (pulled left for optical balance) -->
+    <text x="1" y="0"
+          text-anchor="start"
+          dominant-baseline="middle"
+          dx="-6"
+          font-size="56" font-weight="700"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+          fill="#CFEDEE"
+          stroke="#4A2F1B"
+          stroke-width="4"
+          paint-order="stroke">
+      D
+    </text>
+  </g>
+</svg>
