@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AboutSection from '../components/AboutSection.astro';
+import SkillsSection from '../components/SkillsSection.astro';
 import FreelanceSection from '../components/FreelanceSection.astro';
 import ExperienceSection from '../components/ExperienceSection.astro';
 import WorkSection from '../components/WorkSection.astro';
@@ -8,6 +9,7 @@ import WorkSection from '../components/WorkSection.astro';
 
 <Layout>
 	<AboutSection />
+	<SkillsSection />
 	<FreelanceSection />
 	<ExperienceSection />
 	<WorkSection />
@@ -35,7 +37,7 @@ import WorkSection from '../components/WorkSection.astro';
 	);
 
 	sections.forEach((section) => {
-		if (['about', 'freelance', 'experience', 'work'].includes(section.id)) {
+		if (['about', 'skills', 'freelance', 'experience', 'work'].includes(section.id)) {
 			observer.observe(section);
 		}
 	});

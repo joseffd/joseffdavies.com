@@ -1,0 +1,104 @@
+---
+interface SkillCategory {
+	name: string;
+	skills: string[];
+}
+
+const categories: SkillCategory[] = [
+	{
+		name: "Frontend",
+		skills: ["React", "TypeScript", "Next.js", "Astro", "JavaScript", "Vite"]
+	},
+	{
+		name: "Testing & QA",
+		skills: ["Jest", "React Testing Library", "Chromatic", "Storybook"]
+	},
+	{
+		name: "Data & Visualization",
+		skills: ["GraphQL", "React Query", "D3", "Mapbox"]
+	},
+	{
+		name: "Tooling",
+		skills: ["Datadog", "Sentry" ]
+	}
+];
+---
+
+<section id="skills" class="page-section">
+	<div class="container">
+		<h2 class="page-title">Skills</h2>
+		
+		<div class="skills-grid">
+			{categories.map((category) => (
+				<div class="skill-category">
+					<h3 class="category-name">{category.name}</h3>
+					<ul class="skill-list">
+						{category.skills.map((skill) => (
+							<li class="skill-tag">{skill}</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.page-section {
+		padding: var(--space-lg) var(--space-md);
+		scroll-margin-top: 60px;
+	}
+
+	.container {
+		max-width: 48rem;
+		margin: 0 auto;
+	}
+
+	.page-title {
+		font-size: clamp(2rem, 5vw, 2.5rem);
+		font-weight: 700;
+		margin: 0 0 var(--space-lg);
+		letter-spacing: -0.02em;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-md);
+	}
+
+	@media (max-width: 500px) {
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.skill-category {
+		border-left: 3px solid var(--color-accent-soft);
+		padding-left: var(--space-md);
+	}
+
+	.category-name {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin: 0 0 var(--space-sm);
+	}
+
+	.skill-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.skill-tag {
+		background-color: var(--color-accent-soft);
+		color: var(--color-text);
+		padding: 0.15em 0.5em;
+		border-radius: 4px;
+		font-size: 0.8rem;
+	}
+</style>
