@@ -10,17 +10,16 @@ import EntryCard from '../components/EntryCard.astro';
 	<main>
 		<h1>Experience</h1>
 
-		<!-- <section class="freelance">
-			<h2 class="section-title">Freelance</h2>
-			<p class="freelance-intro">Available for small projects, advisory work, and hiring support. <a href="mailto:joseff@joseffdavies.com">Get in touch</a>.</p>
+		<h2 class="section-title">Freelance</h2>
+		<div class="timeline">
 			<EntryCard
 				title="Tech Lead"
 				subtitle="MyAnova"
 				subtitleUrl="https://www.myanova.com/"
-				meta="Dec 2025 – Feb 2026"
+				meta="Jan 2026"
 				summary="Ran the hiring process for their first engineer, conducting interviews and providing feedback."
 			/>
-		</section> -->
+		</div>
 
 		<h2 class="section-title">Employment</h2>
 		<div class="timeline">
@@ -89,22 +88,7 @@ import EntryCard from '../components/EntryCard.astro';
 		margin: 0 0 var(--space-md);
 	}
 
-	.freelance {
-		margin-bottom: var(--space-lg);
-	}
-
-	.freelance-intro {
-		margin: 0 0 var(--space-md);
-		color: var(--color-text-muted);
-	}
-
-	.freelance-intro a {
-		color: var(--color-accent);
-		text-decoration: none;
-		font-weight: 500;
-	}
-
-	.freelance-intro a:hover {
-		text-decoration: underline;
+	.section-title:not(:first-of-type) {
+		margin-top: var(--space-lg);
 	}
 </style>
